@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  
+  ubuntu-blocks:
+    container_name: blockchain
+    build:
+      context: .
+      dockerfile: blockchain.Dockerfile
+    ports: 
+      - '8545:8545'
+      - '30303:30303'
