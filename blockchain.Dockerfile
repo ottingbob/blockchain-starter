@@ -1,13 +1,6 @@
-# FROM ubuntu:19.04
-FROM ubuntu:19.10
+FROM archlinux:20200306
 
-RUN apt-get update && \
-  dpkg --configure -a && \
-  apt-get install --reinstall python-minimal \
-    python3-software-properties python-lockfile -y && \
-  apt-get install software-properties-common -y && \
-  add-apt-repository -y ppa:ethereum/ethereum && \
-  apt-get install ethereum -y
+RUN pacman -Syu geth python --noconfirm
 
 ENV PASS=__Y0u_w!lL_N3v3r_g34_4hI5__
 
